@@ -20,6 +20,9 @@ headtails = "heads","tails"
 #rand0m = random.choice(headtails)
 #print(rand0m)
 speed = int(input("""
+    .---.        .---.
+   '  H  '  or  '  T  ' simulator 
+    `---`        `---`
 
 Number of flips
 
@@ -89,6 +92,33 @@ if speed == 4:
         if rand0m == "heads":
             counth += 1
 
+        if rand0m == "tails":
+            countt += 1
+
+        counthper = (counth / 1000000) * 100
+        counttper = (countt / 1000000) * 100
+
+if speed == 5:
+    r = int(input("enter how many flips you wish to do: "))
+    for i in progressbar(range(r), "Computing: ", 40):
+        rand0m = random.choice(headtails)
+
+        print(rand0m)
+
+        if rand0m == "heads":
+            counth += 1
+
+        if rand0m == "tails":
+            countt += 1
+
+        counthper = (counth / r) * 100
+        counttper = (countt / r) * 100
+
+
+
+
+print("\n\nheads:", counthper,"%", "\nheads was flipped ",counth," times\n\n")
+print("tails:", counttper,"%", "\ntails was flipped ",countt," times\n\n")
         if rand0m == "tails":
             countt += 1
 
